@@ -1,17 +1,35 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
+
 export default class App extends React.Component {
   render() {
   return (
     <View style={styles.container}>
-    <View style={styles.tile}>
-      <Text>Tic Tac Toe</Text>
-      
-    </View>
+
+       <View style=({flexDirection:"row"})>
+         <View style={[styles.tile, { borderLeftWidth: 0, borderTopWidth: 0,}]} />
+         <View style={[styles.tile, { borderTopWidth: 0, }]} />
+         <View style={[styles.tile, { borderTopWidth: 0, borderRightWidth: 0 }]} />
+       </View>
+
+       <View style=({flexDirection:"row"})>
+         <View style={[styles.tile, { borderLeftWidth: 0, }]}/>
+         <View style={[styles.tile, { }]}/>
+         <View style={[styles.tile, { borderRightWidth: 0 }]}/>
+       </View>
+
+       <View style=({flexDirection:"row"})>
+         <View style={[styles.tile, { borderBottomWidth: 0, borderLeftWidth: 0}]} />
+         <View style={[styles.tile, { borderBottomWidth: 0 }]} />
+         <View style={[styles.tile, { borderBottomWidth: 0, borderRightWidth: 0}]} />
+       </View>
+    
     </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -20,22 +38,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tile: {
-    borderWidth:1,
+    borderWidth:10,
     width: 100,
     height: 100,
+    color: #FFC75F,
   }
 
 });
-/*export default class App extends React.Component {
- constructor(props) {
-   super(props);
-   this.states = {
-     gameState: [
-       [0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]
-     ],
-     currentPlayer: 1,
-   }
- }
-}*/
+
